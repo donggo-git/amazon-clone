@@ -9,7 +9,7 @@ height:60px;
 background-color:#0F1111;
 display:flex;
 align-items: center;
-
+justify-content:space-between;
 color: white
 `
 
@@ -19,17 +19,40 @@ img{
     margin-left:11px;
 }
 `
-const HeaderSearch = styled.div``
-const HeaderSearchInput = styled.input``
+const HeaderSearch = styled.div`
+display:flex;
+flex-grow:1;
+height:40px;
+border-radius:4px;
+overflow:hidden
+`
+const HeaderSearchInput = styled.input`
+flex-grow:1;
+:focus{
+    outline:none;
+}
+`
 const HeaderOptionAddress = styled.div``
-const HeaderSearchIconContainer = styled.div``
+const HeaderSearchIconContainer = styled.div`
+background-color:#febd69;
+width:45px;
+color:black;
+display:flex;
+justify-content: center;
+align-items:center
+`
 
 const OptionLineOne = styled.div``
-const OptionLineTwo = styled.div``
+const OptionLineTwo = styled.div`
+font-weight:700;`
 
 const HeaderNavItems = styled.div`
-display:flex`
-const HeaderOption = styled.div``
+display:flex;
+
+`
+const HeaderOption = styled.div`
+padding: 10px 9px;
+`
 const CartCount = styled.div``
 
 function Header() {

@@ -3,6 +3,7 @@ import './Header.css'
 import styled from 'styled-components'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const Container = styled.div`
 height:60px;
@@ -24,15 +25,26 @@ display:flex;
 flex-grow:1;
 height:40px;
 border-radius:4px;
-overflow:hidden
+overflow:hidden;
+margin-left:4px;
+background-color:white;
+:focus-within{
+    box-shadow:0 0 0 3px #F90;
+}
 `
 const HeaderSearchInput = styled.input`
 flex-grow:1;
+border:0;
 :focus{
     outline:none;
 }
 `
-const HeaderOptionAddress = styled.div``
+const HeaderOptionAddress = styled.div`
+padding-left:9px;
+display:flex;
+align-items:center
+`
+const HeaderAddress = styled.div``
 const HeaderSearchIconContainer = styled.div`
 background-color:#febd69;
 width:45px;
@@ -53,7 +65,15 @@ display:flex;
 const HeaderOption = styled.div`
 padding: 10px 9px;
 `
-const CartCount = styled.div``
+const CartCount = styled.div`
+padding-left:9px
+`
+
+const HeaderOptionCart = styled.div`
+display:flex;
+align-items:center;
+padding-right:9px;
+`
 
 function Header() {
     return (
@@ -62,8 +82,11 @@ function Header() {
                 <img src="https://mikekitko.com/wp-content/uploads/2019/10/amazon-logo-white-768x232.png" />
             </HeaderLogo>
             <HeaderOptionAddress>
-                <OptionLineOne>Hello</OptionLineOne>
-                <OptionLineTwo>Select your address</OptionLineTwo>
+                <LocationOnIcon />
+                <HeaderAddress>
+                    <OptionLineOne>Hello</OptionLineOne>
+                    <OptionLineTwo>Select your address</OptionLineTwo>
+                </HeaderAddress>
             </HeaderOptionAddress>
 
             <HeaderSearch>
@@ -82,13 +105,13 @@ function Header() {
                     <OptionLineOne>Returns</OptionLineOne>
                     <OptionLineTwo>&Orders</OptionLineTwo>
                 </HeaderOption>
-                <HeaderOption>
+                <HeaderOptionCart>
                     <ShoppingBasketIcon />
                     <CartCount>5</CartCount>
-                </HeaderOption>
+                </HeaderOptionCart>
             </HeaderNavItems>
 
-        </Container>
+        </Container >
     )
 }
 

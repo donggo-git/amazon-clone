@@ -12,7 +12,9 @@ function Home() {
 }
 
 export default Home
-const Container = styled.div``
+const Container = styled.div`
+max-width:1500px;
+margin: 0 auto`
 const Banner = styled.div`
     background-image: url("https://i.imgur.com/SYHeuYM.jpg");
     min-height:600px;
@@ -22,4 +24,7 @@ const Banner = styled.div`
     `
 const Content = styled.div`
     background-color:white;
+    padding-left:10px;
+    padding-right:10px;
+    margin-top:-350px;
 `

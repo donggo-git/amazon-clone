@@ -1,12 +1,15 @@
 
 import React from 'react'
 import styled from 'styled-components'
+import Product from './Product'
 
 function Home() {
     return (
         <Container>
             <Banner></Banner>
-            <Content></Content>
+            <Content>
+                <Product />
+            </Content>
         </Container>
     )
 }

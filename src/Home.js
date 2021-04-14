@@ -9,6 +9,7 @@ function Home() {
             <Banner></Banner>
             <Content>
                 <Product />
+                <Product />
             </Content>
         </Container>
     )
@@ -23,9 +24,11 @@ const Banner = styled.div`
     min-height:600px;
     background-position:center;
     background-size:cover;
-    mask-image:linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,0))
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,0));
+    z-index:1
     `
 const Content = styled.div`
+    display:flex;
     background-color:white;
     padding-left:10px;
     padding-right:10px;

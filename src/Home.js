@@ -29,7 +29,6 @@ const Banner = styled.div`
     `
 const Content = styled.div`
     display:flex;
-    background-color:white;
     padding-left:10px;
     padding-right:10px;
     margin-top:-350px;

@@ -1,9 +1,19 @@
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Product from './Product'
+import { db } from "./firebase"
 
 function Home() {
+    const [products, setProducts] = useState([]);
+    const getProduct = () => {
+        db.collection('product').onSnapshot((snapshot) => {
+            let tempData = [];
+            tempData = snapshot.docs.map((doc) => doc.data());
+            console.log(tempData)
+        })
+    }
+    getProduct();
     return (
         <Container>
             <Banner></Banner>

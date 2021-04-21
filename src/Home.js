@@ -9,11 +9,21 @@ function Home() {
     const getProduct = () => {
         db.collection('product').onSnapshot((snapshot) => {
             let tempData = [];
-            tempData = snapshot.docs.map((doc) => doc.data());
-            console.log(tempData)
+            tempData = snapshot.docs.map((doc) => (
+                {
+                    id: doc.id,
+                    product: doc.data()
+                }
+
+            ));
+            setProducts(tempData)
         })
     }
-    getProduct();
+    useEffect(() => {
+        getProduct()
+    }, [])
+
+    console.log(products)
     return (
         <Container>
             <Banner></Banner>

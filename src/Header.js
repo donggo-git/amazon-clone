@@ -67,7 +67,9 @@ const HeaderOption = styled.div`
 padding: 10px 9px;
 `
 const CartCount = styled.div`
-padding-left:9px
+padding-left:9px;
+font-weight:700;
+color:#f08804;
 `
 
 const HeaderOptionCart = styled.div`

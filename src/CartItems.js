@@ -4,7 +4,11 @@ import styled from 'styled-components'
 function CartItems() {
     return (
         <Container>
-
+            <Title>Shopping Cart</Title>
+            <hr />
+            <ItemContainer>
+                <CartItem />
+            </ItemContainer>
         </Container>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import CartItem from './CartItem'
 function CartItems() {
     return (
         <Container>
@@ -20,5 +20,6 @@ flex:0.8;
 margin-right:18px;
 padding:20px
 `;
-
+const Title = styled.p``;
+const ItemContainer = styled.div``;
 export default CartItems

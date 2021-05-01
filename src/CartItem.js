@@ -32,6 +32,7 @@ const ImageContainer = styled.div`
     height:180px;
     flex-shrink:0;
     flex-grow:0;
+    margin-right:16px;
     img{
         object-fit:contain;
         height:100%;

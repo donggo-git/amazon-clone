@@ -1,23 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function CartItem() {
+function CartItem({ key, item }) {
     return (
         <Container>
             <ImageContainer>
-                <img src={""} />
+                <img src={item.image} />
             </ImageContainer>
             <CartItemInfo>
                 <CartItemInfoTop>
-                    <h2></h2>
+                    <h2>{item.name}</h2>
                 </CartItemInfoTop>
                 <CartItemInfoBottom>
-                    <CartItemQuantityContainer>5</CartItemQuantityContainer>
+                    <CartItemQuantityContainer>{item.quantity}</CartItemQuantityContainer>
                     <CartItemDeleteContainer>Delete</CartItemDeleteContainer>
                 </CartItemInfoBottom>
             </CartItemInfo>
             <CartItemPrice>
-                $1449
+                ${item.Price}
             </CartItemPrice>
         </Container>
     )

@@ -4,16 +4,16 @@ import { db } from "./firebase"
 
 function Product({ title, price, rating, image, id }) {
     const addToCart = () => {
+        console.log(id);
         const cartItem = db.collection("cartItems").doc(id);
-        cartItem.get().
-            then((doc) => {
-                console.log(doc)
+        cartItem.get()
+            .then((doc) => {
+                console.log(doc);
                 if (doc.exists) {
                     cartItem.update({
                         quantity: doc.data().quantity + 1
                     })
-                }
-                else {
+                } else {
                     db.collection("cartItems").doc(id).set({
                         name: title,
                         image: image,
@@ -24,7 +24,7 @@ function Product({ title, price, rating, image, id }) {
             })
     }
     return (
-        <Container>
+        <Container key={id}>
             <Title>{title}</Title>
             <Price>${price}</Price>
             <Rating>

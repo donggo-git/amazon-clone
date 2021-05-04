@@ -23,7 +23,6 @@ function Home() {
         getProduct()
     }, [])
 
-    console.log(products)
     return (
         <Container>
             <Banner></Banner>
@@ -34,6 +33,7 @@ function Home() {
                         price={data.product.Price}
                         rating={data.product.rating}
                         image={data.product.image}
+                        key={data.product.id}
                     />
                 ))}
             </Content>

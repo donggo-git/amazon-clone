@@ -9,7 +9,7 @@ function CartItems({ cartItems }) {
             <ItemContainer>
                 {cartItems.map(item => (
                     <CartItem
-                        key={item.id}
+                        id={item.id}
                         item={item.product}
                     />
                 ))}
@@ -20,7 +20,6 @@ function CartItems({ cartItems }) {
 }
 
 const Container = styled.div`
-height:300px;
 background-color:white;
 flex:0.8;
 margin-right:18px;

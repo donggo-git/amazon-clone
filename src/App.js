@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     getCartItems();
   }, [])
-  console.log(cartItems)
+
   return (
     <div className="App">
       <Router>

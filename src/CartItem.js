@@ -35,6 +35,7 @@ const Container = styled.div`
 padding-top:12px;
 padding-bottom: 12px;
 display:flex;
+border-bottom:1px solid #DDD;
 `;
 const ImageContainer = styled.div`
     width:180px;

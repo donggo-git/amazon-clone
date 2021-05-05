@@ -33,7 +33,7 @@ function Home() {
                         price={data.product.Price}
                         rating={data.product.rating}
                         image={data.product.image}
-                        key={data.product.id}
+                        id={data.id}
                     />
                 ))}
             </Content>

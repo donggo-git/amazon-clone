@@ -13,7 +13,6 @@ function CartItems({ cartItems }) {
                         item={item.product}
                     />
                 ))}
-
             </ItemContainer>
         </Container>
     )

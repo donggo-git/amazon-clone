@@ -83,7 +83,15 @@ a{
 }
 `
 
-function Header() {
+
+function Header({ cartItems }) {
+    const getCount = () => {
+        let count = 0;
+        cartItems.forEach((item) => {
+            count += item.product.quantity;
+        })
+        return count;
+    }
     return (
         <Container>
             <HeaderLogo>
@@ -119,7 +127,7 @@ function Header() {
                 <HeaderOptionCart>
                     <Link to="/cart">
                         <ShoppingBasketIcon />
-                        <CartCount>5</CartCount>
+                        <CartCount>{getCount()}</CartCount>
                     </Link>
                 </HeaderOptionCart>
 

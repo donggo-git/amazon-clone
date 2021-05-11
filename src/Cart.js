@@ -12,10 +12,18 @@ function Cart({ cartItems }) {
         })
         return total;
     }
+    const getTotalCount = () => {
+        let total = 0;
+
+        cartItems.forEach((item) => {
+            total += item.product.quantity;
+        })
+        return total;
+    }
     return (
         <Container>
             <CartItems cartItems={cartItems} />
-            <CartTotal getTotalPrice={getTotalPrice} />
+            <CartTotal getTotalPrice={getTotalPrice} getTotalCount={getTotalCount} />
         </Container>
     )
 }

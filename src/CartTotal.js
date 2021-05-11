@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-function CartTotal() {
+function CartTotal({ getTotalPrice }) {
+
     return (
         <Container>
-            <Subtotal>Subtotal</Subtotal>
+            <Subtotal>Subtotal (): ${getTotalPrice()}</Subtotal>
             <CheckoutButton>Proceed to checkout</CheckoutButton>
         </Container>
     )
@@ -12,7 +13,7 @@ function CartTotal() {
 const Container = styled.div`
 height:200px;
 background-color:white;
-flex:0.2;
+flex:0.3;
 padding 20px
 `
 const CheckoutButton = styled.button`
@@ -28,5 +29,6 @@ font-size:16px;
 }
 `
 const Subtotal = styled.h2`
+margin-bottom:16px;
 `
 export default CartTotal

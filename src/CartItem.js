@@ -12,6 +12,10 @@ function CartItem({ id, item }) {
             quantity: parseInt(newQuantity)
         })
     }
+    const DeleteItem = (e) => {
+        e.preventDefault();
+        db.collection("cartItems").doc(id).delete();
+    }
     return (
         <Container>
             <ImageContainer>
@@ -30,7 +34,10 @@ function CartItem({ id, item }) {
                             {options}
                         </select>
                     </CartItemQuantityContainer>
-                    <CartItemDeleteContainer>Delete</CartItemDeleteContainer>
+                    <CartItemDeleteContainer
+                        onClick={DeleteItem}
+                    >Delete
+                    </CartItemDeleteContainer>
                 </CartItemInfoBottom>
             </CartItemInfo>
             <CartItemPrice>

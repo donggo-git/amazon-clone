@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header'
 import Cart from './Cart'
 import Home from './Home'
+import Login from './Login'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import styled from 'styled-components'
 import { db } from "./firebase"
@@ -29,12 +30,16 @@ function App() {
         <Container>
           <Header cartItems={cartItems} />
           <Switch>
+            <Route path="/login">
+              <Login />
+            </Route>
             <Route path="/cart">
               <Cart cartItems={cartItems} />
             </Route>
             <Route path="/">
               <Home />
             </Route>
+
           </Switch>
         </Container>
       </Router>

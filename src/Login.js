@@ -1,14 +1,27 @@
 
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { auth, provider } from './firebase'
 
 function Login() {
+
+    const signIn = () => {
+        auth.signInWithPopup(provider).then((result) => {
+            let user = result.user;
+            console.log(user);
+        }).catch(error => {
+            alert(error.message);
+        })
+    }
+
     return (
         <Container>
             <Content>
                 <AmazonLogo src='http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG' />
                 <h1>Sign into Amazon</h1>
-                <LoginButton>
+                <LoginButton
+                    onClick={signIn}
+                >
                     Sign in with Google
                 </LoginButton>
             </Content>

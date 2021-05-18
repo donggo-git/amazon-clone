@@ -5,15 +5,20 @@ import { auth, provider } from './firebase'
 
 function Login() {
 
-    const signIn = () => {
+    const signIn = ({ setUser }) => {
         auth.signInWithPopup(provider).then((result) => {
             let user = result.user;
-            console.log(user);
+            let newUser = {
+                name: user.displayName,
+                email: user.email,
+                photo: user.photoURL
+            }
+            setUser(newUser)
+
         }).catch(error => {
             alert(error.message);
         })
     }
-
     return (
         <Container>
             <Content>

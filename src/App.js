@@ -10,6 +10,7 @@ import { db } from "./firebase"
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [user, setUser] = useState([]);
   const getCartItems = () => {
     db.collection("cartItems").onSnapshot((snapshot) => {
       const tempItems = snapshot.docs.map((doc) => ({
@@ -28,7 +29,7 @@ function App() {
     <div className="App">
       <Router>
         <Container>
-          <Header cartItems={cartItems} />
+          <Header cartItems={cartItems} user={user} />
           <Switch>
             <Route path="/login">
               <Login />

@@ -84,7 +84,7 @@ a{
 `
 
 
-function Header({ cartItems }) {
+function Header({ cartItems, user }) {
     const getCount = () => {
         let count = 0;
         cartItems.forEach((item) => {
@@ -102,7 +102,7 @@ function Header({ cartItems }) {
             <HeaderOptionAddress>
                 <LocationOnIcon />
                 <HeaderAddress>
-                    <OptionLineOne>Hello</OptionLineOne>
+                    <OptionLineOne>Hello, {user.name}</OptionLineOne>
                     <OptionLineTwo>Select your address</OptionLineTwo>
                 </HeaderAddress>
             </HeaderOptionAddress>

@@ -22,7 +22,7 @@ function Home() {
     useEffect(() => {
         getProduct()
     }, [])
-
+    console.log(products);
     return (
         <Container>
             <Banner></Banner>

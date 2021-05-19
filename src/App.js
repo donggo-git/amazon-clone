@@ -28,21 +28,24 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Container>
-          <Header cartItems={cartItems} user={user} />
-          <Switch>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/cart">
-              <Cart cartItems={cartItems} />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+        {
+          !user ?
+            (<Login setUser={setUser} />) :
+            (
+              <Container>
+                <Header cartItems={cartItems} user={user} />
+                <Switch>
+                  <Route path="/cart">
+                    <Cart cartItems={cartItems} />
+                  </Route>
+                  <Route path="/">
+                    <Home />
+                  </Route>
 
-          </Switch>
-        </Container>
+                </Switch>
+              </Container>)
+        }
+
       </Router>
     </div>
   );

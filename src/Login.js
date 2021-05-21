@@ -3,9 +3,9 @@ import React from 'react'
 import styled from 'styled-components';
 import { auth, provider } from './firebase'
 
-function Login() {
+function Login({ setUser }) {
 
-    const signIn = ({ setUser }) => {
+    const signIn = () => {
         auth.signInWithPopup(provider).then((result) => {
             let user = result.user;
             let newUser = {
@@ -13,9 +13,9 @@ function Login() {
                 email: user.email,
                 photo: user.photoURL
             }
-            setUser(newUser)
-
-        }).catch(error => {
+            localStorage.setItem('user', JSON.stringify(newUser))
+            setUser(newUser);
+        }).catch((error) => {
             alert(error.message);
         })
     }

@@ -84,7 +84,7 @@ a{
 `
 
 
-function Header({ cartItems, user }) {
+function Header({ cartItems, user, signOut }) {
     const getCount = () => {
         let count = 0;
         cartItems.forEach((item) => {
@@ -115,7 +115,7 @@ function Header({ cartItems, user }) {
             </HeaderSearch>
 
             <HeaderNavItems>
-                <HeaderOption>
+                <HeaderOption onClick={signOut}>
                     <OptionLineOne>Hello, Dong</OptionLineOne>
                     <OptionLineTwo>Account & List</OptionLineTwo>
                 </HeaderOption>

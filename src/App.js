@@ -6,7 +6,7 @@ import Home from './Home'
 import Login from './Login'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import styled from 'styled-components'
-import { db } from "./firebase"
+import { auth, db } from "./firebase"
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -18,6 +18,13 @@ function App() {
         product: doc.data()
       }))
       setCartItems(tempItems)
+    })
+  }
+
+  const signOut = () => {
+    auth.signOut().then(() => {
+      localStorage.removeItem("user");
+      setUser(null)
     })
   }
 
@@ -33,7 +40,10 @@ function App() {
             (<Login setUser={setUser} />) :
             (
               <Container>
-                <Header cartItems={cartItems} user={user} />
+                <Header
+                  signOut={signOut}
+                  cartItems={cartItems}
+                  user={user} />
                 <Switch>
                   <Route path="/cart">
                     <Cart cartItems={cartItems} />

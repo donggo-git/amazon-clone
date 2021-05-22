@@ -10,7 +10,7 @@ import { auth, db } from "./firebase"
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
   const getCartItems = () => {
     db.collection("cartItems").onSnapshot((snapshot) => {
       const tempItems = snapshot.docs.map((doc) => ({

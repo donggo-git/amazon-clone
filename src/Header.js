@@ -65,6 +65,7 @@ display:flex;
 `
 const HeaderOption = styled.div`
 padding: 10px 9px;
+cursor:pointer;
 `
 const CartCount = styled.div`
 padding-left:9px;
